@@ -1,0 +1,1181 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NO SECURITY AGENCY — N.S.A-FILE-01</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    min-height: 100%;
+}
+
+body {
+    background:
+        radial-gradient(circle at center, #151515 0%, #050505 55%, #000 100%);
+    color: #111;
+    font-family: "Courier New", monospace;
+    padding: 50px 20px;
+    overflow-x: hidden;
+    transition: background 1s, color 1s;
+}
+
+
+/* =========================
+   RED LETTERS
+========================= */
+
+.red-letter {
+    position: fixed;
+    color: #7a0000;
+    font-size: 42px;
+    font-weight: bold;
+    pointer-events: none;
+    opacity: 0.65;
+    user-select: none;
+    z-index: 0;
+}
+
+.l1 { top: 7%; left: 12%; }
+.l2 { top: 20%; right: 18%; }
+.l3 { top: 43%; left: 5%; }
+.l4 { top: 61%; right: 8%; }
+.l5 { top: 78%; left: 19%; }
+.l6 { top: 91%; right: 24%; }
+.l7 { top: 34%; right: 42%; }
+.l8 { top: 72%; left: 46%; }
+
+
+/* =========================
+   LANGUAGE
+========================= */
+
+.language-box {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 20;
+    background: #080808;
+    border: 1px solid #555;
+    padding: 5px;
+}
+
+.language-box button {
+    background: #111;
+    color: #aaa;
+    border: 1px solid #333;
+    font-family: "Courier New", monospace;
+    font-size: 12px;
+    padding: 5px 8px;
+    cursor: pointer;
+}
+
+.language-box button:hover {
+    color: white;
+    border-color: #888;
+}
+
+.language-box button.active {
+    color: #fff;
+    background: #333;
+}
+
+
+/* =========================
+   DOCUMENT
+========================= */
+
+.paper {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: auto;
+
+    background:
+        linear-gradient(
+            rgba(255,255,255,0.97),
+            rgba(224,224,224,0.97)
+        );
+
+    border: 1px solid #777;
+
+    box-shadow:
+        0 0 40px rgba(0,0,0,0.8),
+        inset 0 0 25px rgba(0,0,0,0.12);
+
+    padding: 45px;
+
+    transition:
+        background 1s,
+        box-shadow 1s,
+        border-color 1s;
+}
+
+
+/* =========================
+   CORNER
+========================= */
+
+.agency-corner {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    text-align: right;
+    font-size: 10px;
+    color: #333;
+    line-height: 1.4;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    border-bottom: 3px double #222;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 25px;
+    letter-spacing: 2px;
+}
+
+header p {
+    margin: 5px 0 0;
+    font-size: 12px;
+}
+
+.stamp {
+    display: inline-block;
+    border: 2px solid #8b0000;
+    color: #8b0000;
+    padding: 4px 8px;
+    transform: rotate(-4deg);
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: 12px;
+}
+
+
+/* =========================
+   TITLES
+========================= */
+
+h2 {
+    font-size: 15px;
+    border-bottom: 1px solid #555;
+    padding-bottom: 4px;
+    margin-top: 30px;
+}
+
+
+/* =========================
+   INFORMATION
+========================= */
+
+.info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 30px;
+    font-size: 13px;
+}
+
+.line {
+    border-bottom: 1px dotted #777;
+    padding: 5px 0;
+}
+
+.label {
+    font-weight: bold;
+}
+
+.text {
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+
+/* =========================
+   INCIDENT
+========================= */
+
+.incident {
+    border-left: 4px solid #444;
+    padding-left: 15px;
+    margin-top: 15px;
+}
+
+.warning {
+    color: #700000;
+    font-weight: bold;
+}
+
+
+/* =========================
+   SECRET TEXT
+========================= */
+
+.secret {
+    background: #050505;
+    color: #050505;
+    padding: 0 3px;
+    border: 1px solid #111;
+    cursor: text;
+    user-select: text;
+}
+
+.secret::selection {
+    background: #333;
+    color: #fff;
+}
+
+.secret::-moz-selection {
+    background: #333;
+    color: #fff;
+}
+
+.secret:hover {
+    background: #111;
+}
+
+
+/* =========================
+   CORRUPTION
+========================= */
+
+.corruption {
+    color: #180000;
+    transition: color 1s;
+}
+
+.red {
+    color: #8b0000;
+    font-weight: bold;
+}
+
+.dark-red {
+    color: #450000;
+}
+
+.glitch {
+    color: #8b0000;
+    font-weight: bold;
+    letter-spacing: 2px;
+    animation: glitch 0.18s infinite;
+}
+
+@keyframes glitch {
+
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    25% {
+        transform: translateX(-2px);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: translateX(2px);
+        opacity: 0.9;
+    }
+
+    75% {
+        transform: translateX(-1px);
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================
+   FINAL MESSAGE
+========================= */
+
+.final-message {
+    margin-top: 80px;
+    min-height: 600px;
+
+    background:
+        linear-gradient(
+            rgba(30,0,0,0.12),
+            rgba(70,0,0,0.30)
+        );
+
+    border-left: 5px solid #700000;
+
+    padding: 30px;
+
+    color: #400000;
+
+    transition:
+        background 2s,
+        color 2s;
+}
+
+.final-message h2 {
+    color: #650000;
+    border-color: #650000;
+}
+
+.message {
+    font-size: 17px;
+    line-height: 2;
+}
+
+.message strong {
+    color: #8b0000;
+}
+
+.help {
+    margin-top: 80px;
+    padding: 30px;
+
+    border: 1px solid #650000;
+
+    background: rgba(30,0,0,0.08);
+
+    color: #700000;
+
+    font-size: 18px;
+
+    animation: helpPulse 2s infinite;
+}
+
+@keyframes helpPulse {
+
+    0% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.5;
+    }
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    border-top: 1px solid #555;
+    margin-top: 35px;
+    padding-top: 10px;
+    font-size: 10px;
+    color: #444;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* =========================
+   CORRUPTED LOWER SECTION
+========================= */
+
+.corrupted-section {
+    margin-top: 100px;
+    color: #250000;
+}
+
+.corrupted-section p {
+    line-height: 2;
+}
+
+.censored {
+    background: #050505;
+    color: #050505;
+    padding: 0 5px;
+}
+
+.redacted-red {
+    color: #8b0000;
+    background: #220000;
+    padding: 2px 5px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+    .paper {
+        padding: 25px;
+    }
+
+    .info {
+        grid-template-columns: 1fr;
+    }
+
+    .agency-corner {
+        position: static;
+        text-align: left;
+        margin-bottom: 15px;
+    }
+
+    body {
+        padding: 25px 10px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- RED LETTERS -->
+
+<div class="red-letter l1">H</div>
+<div class="red-letter l2">E</div>
+<div class="red-letter l3">L</div>
+<div class="red-letter l4">P</div>
+<div class="red-letter l5">H</div>
+<div class="red-letter l6">E</div>
+<div class="red-letter l7">L</div>
+<div class="red-letter l8">P</div>
+
+
+<!-- LANGUAGE -->
+
+<div class="language-box">
+
+    <button id="esBtn" onclick="setLanguage('es')">
+        ES
+    </button>
+
+    <button id="enBtn" onclick="setLanguage('en')">
+        EN
+    </button>
+
+    <button id="ptBtn" onclick="setLanguage('pt')">
+        PT
+    </button>
+
+</div>
+
+
+<!-- DOCUMENT -->
+
+<div class="paper">
+
+
+    <div class="agency-corner">
+
+        <b>NO SECURITY AGENCY</b><br>
+
+        <span>
+            INTERNAL ARCHIVE DIVISION
+        </span><br>
+
+        <span>
+            ESTABLISHED — 1899
+        </span>
+
+    </div>
+
+
+    <header>
+
+        <h1>
+            NO SECURITY AGENCY
+        </h1>
+
+        <p>
+            DEPARTMENT OF ARTIFICIAL ENVIRONMENT RESEARCH
+        </p>
+
+        <div class="stamp">
+            CONFIDENTIAL
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         INFORMATION
+    ========================= -->
+
+    <h2>
+        CASE INFORMATION
+    </h2>
+
+
+    <div class="info">
+
+
+        <div class="line">
+
+            <span class="label">
+                CASE:
+            </span>
+
+            01
+
+        </div>
+
+
+        <div class="line">
+
+            <span class="label">
+                STATUS:
+            </span>
+
+            <span class="red">
+                CLASSIFIED
+            </span>
+
+        </div>
+
+
+        <div class="line">
+
+            <span class="label">
+                SUBJECT:
+            </span>
+
+            <span class="secret">
+                <span class="secretText">
+                    █████████
+                </span>
+            </span>
+
+        </div>
+
+
+        <div class="line">
+
+            <span class="label">
+                AGE:
+            </span>
+
+            <span class="secret">
+                <span class="secretText">
+                    ███
+                </span>
+            </span>
+
+        </div>
+
+
+        <div class="line">
+
+            <span class="label">
+                HAIR:
+            </span>
+
+            <span class="red">
+                RED
+            </span>
+
+        </div>
+
+
+        <div class="line">
+
+            <span class="label">
+                PROJECT:
+            </span>
+
+            <span class="secret">
+                R
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =========================
+         INITIAL OBSERVATION
+    ========================= -->
+
+    <h2>
+        INITIAL OBSERVATION
+    </h2>
+
+
+    <div class="text">
+
+
+        <p>
+            El sujeto, un joven de cabello rojo,
+            se ofreció voluntariamente para participar
+            en una prueba experimental relacionada con
+            un entorno artificial.
+        </p>
+
+
+        <p>
+            El objetivo documentado del procedimiento
+            consistía en introducir temporalmente la
+            conciencia del sujeto dentro de un mundo
+            artificial desarrollado por
+            <span class="secret">R</span>.
+        </p>
+
+
+        <p>
+            <span class="warning">
+                NOTA:
+            </span>
+
+            El sujeto fue informado de los riesgos
+            generales del procedimiento y aceptó
+            continuar.
+        </p>
+
+
+    </div>
+
+
+    <!-- =========================
+         PROCEDURE
+    ========================= -->
+
+    <h2>
+        PROCEDURE
+    </h2>
+
+
+    <div class="text corruption">
+
+
+        <p>
+            09:14 — El sujeto ingresó a la cámara
+            de transferencia.
+        </p>
+
+
+        <p>
+            09:16 — La transferencia cognitiva
+            comenzó correctamente.
+        </p>
+
+
+        <p>
+            09:17 — El entorno artificial respondió
+            de manera normal.
+        </p>
+
+
+        <p>
+            09:19 — <span class="secret">
+                █████████████████████████
+            </span>
+        </p>
+
+
+        <p>
+            09:20 — <span class="dark-red">
+                Se detectó una alteración en la
+                estructura del entorno.
+            </span>
+        </p>
+
+
+        <p>
+            09:21 — <span class="red">
+                EL SUJETO DEJÓ DE RESPONDER.
+            </span>
+        </p>
+
+
+        <p>
+            09:22 — <span class="secret">
+                █████████████████████████████████
+            </span>
+        </p>
+
+
+    </div>
+
+
+    <!-- =========================
+         OBSERVATION
+    ========================= -->
+
+    <h2>
+        OBSERVATION LOG
+    </h2>
+
+
+    <div class="text">
+
+
+        <p>
+            La conexión con el entorno artificial
+            permaneció activa.
+        </p>
+
+
+        <p>
+            El sistema continuó transmitiendo
+            información visual.
+        </p>
+
+
+        <p>
+            <span class="secret">
+                ███████████████████████████████████████
+            </span>
+        </p>
+
+
+        <p>
+            <span class="red">
+                █████████████████████████████████████
+            </span>
+        </p>
+
+
+        <p>
+            <span class="secret">
+                ███████████████████████████████████████████
+            </span>
+        </p>
+
+
+        <p>
+            <span class="dark-red">
+                La agencia intentó finalizar la
+                conexión.
+            </span>
+        </p>
+
+
+        <p>
+            <span class="red">
+                LA CONEXIÓN NO RESPONDIÓ.
+            </span>
+        </p>
+
+
+    </div>
+
+
+    <!-- =========================
+         CENSORED SECTION
+    ========================= -->
+
+    <div class="corrupted-section">
+
+
+        <h2>
+            █████████████████████████████
+        </h2>
+
+
+        <p>
+            <span class="censored">
+                El sujeto continúa dentro del entorno.
+            </span>
+        </p>
+
+
+        <p>
+            <span class="censored">
+                No se ha encontrado ningún método
+                confirmado para extraerlo.
+            </span>
+        </p>
+
+
+        <p>
+            <span class="redacted-red">
+                █████████████████████████████████
+            </span>
+        </p>
+
+
+        <p>
+            <span class="censored">
+                El mundo artificial parece haber
+                comenzado a modificar sus propios
+                parámetros.
+            </span>
+        </p>
+
+
+        <p>
+            <span class="red">
+                R NO RESPONDE.
+            </span>
+        </p>
+
+
+        <p>
+            <span class="censored">
+                █████████████████████████████████████████████
+            </span>
+        </p>
+
+
+        <p>
+            <span class="redacted-red">
+                █████████████████████████████████████████
+            </span>
+        </p>
+
+
+        <p>
+            <span class="censored">
+                █████████████████████████████████████████████████
+            </span>
+        </p>
+
+
+    </div>
+
+
+    <!-- =========================
+         DEEPER OBSERVATION
+    ========================= -->
+
+    <div class="corrupted-section">
+
+
+        <h2 class="red">
+            █████████████████████████████████
+        </h2>
+
+
+        <p>
+            <span class="red">
+                09:██ — ████████████████████
+            </span>
+        </p>
+
+
+        <p>
+            <span class="censored">
+                █████████████████████████████████████████████████
+            </span>
+        </p>
+
+
+        <p>
+            <span class="red">
+                ███████████████████████████████████████████████
+            </span>
+        </p>
+
+
+        <p>
+            <span class="censored">
+                ███████████████████████████████████████████████████
+            </span>
+        </p>
+
+
+        <p>
+            <span class="red">
+                NO HAY REGISTRO DE SALIDA.
+            </span>
+        </p>
+
+
+        <p>
+            <span class="redacted-red">
+                █████████████████████████████████████████████████
+            </span>
+        </p>
+
+
+        <p>
+            <span class="censored">
+                ████████████████████████████████████████████████████
+            </span>
+        </p>
+
+
+        <p>
+            <span class="glitch">
+                RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+            </span>
+        </p>
+
+
+        <p>
+            <span class="glitch">
+                ████ R ████ R ████ R ████
+            </span>
+        </p>
+
+
+    </div>
+
+
+    <!-- =========================
+         FINAL MESSAGE
+    ========================= -->
+
+    <div class="final-message">
+
+
+        <h2>
+            FINAL TRANSMISSION
+        </h2>
+
+
+        <div class="message">
+
+
+            <p>
+                <span class="censored">
+                    █████████████████████████████
+                </span>
+            </p>
+
+
+            <p>
+                <span class="censored">
+                    ███████████████████████████████████████
+                </span>
+            </p>
+
+
+            <p>
+                <span class="red">
+                    SEÑAL DE AUDIO DETECTADA.
+                </span>
+            </p>
+
+
+            <p>
+                <span class="red">
+                    ORIGEN: INTERIOR DEL ENTORNO ARTIFICIAL.
+                </span>
+            </p>
+
+
+            <br>
+
+
+            <p>
+                <strong>MR:</strong>
+            </p>
+
+
+            <p>
+                <span class="red">
+                    SACAME DE AQUI POR FAVOR,
+                </span>
+            </p>
+
+
+            <p>
+                <span class="red">
+                    ESTOY ATRAPADO EN ESTA SIMULACION....
+                </span>
+            </p>
+
+
+            <p>
+                <span class="glitch">
+                    AAYUD--D-A-D-A-U--UY-Y-Y-Y
+                </span>
+            </p>
+
+
+            <p>
+                <span class="glitch">
+                    G̷L̷I̷T̷C̷H̷
+                </span>
+            </p>
+
+
+            <p>
+                <span class="glitch">
+                    R̷R̷R̷R̷R̷R̷R̷R̷
+                </span>
+            </p>
+
+
+        </div>
+
+
+        <div class="help">
+
+            MR: SACAME DE AQUI POR FAVOR,
+            ESTOY ATRAPADO EN ESTA SIMULACION....
+
+            <br><br>
+
+            AAYUD--D-A-D-A-U--UY-Y-Y-Y
+
+            <br><br>
+
+            G̷L̷I̷T̷C̷H̷
+
+        </div>
+
+
+    </div>
+
+
+    <footer>
+
+        <span>
+            NO SECURITY AGENCY — INTERNAL ARCHIVE
+        </span>
+
+        <span>
+            RECORD: CASE 01 — REVISION ██
+        </span>
+
+    </footer>
+
+
+</div>
+
+
+<script>
+
+
+/* =========================
+   SCROLL CORRUPTION
+========================= */
+
+const paper = document.querySelector(".paper");
+
+window.addEventListener("scroll", function() {
+
+    const scrollTop =
+        window.scrollY;
+
+    const maxScroll =
+        document.documentElement.scrollHeight -
+        window.innerHeight;
+
+    const progress =
+        Math.min(scrollTop / maxScroll, 1);
+
+
+    /*
+       Cuanto más abajo,
+       más rojo se vuelve el documento.
+    */
+
+    const redAmount =
+        Math.floor(progress * 45);
+
+
+    paper.style.background =
+        "linear-gradient(" +
+        "rgba(255," +
+        (255 - redAmount) +
+        "," +
+        (255 - redAmount) +
+        ",0.97)," +
+        "rgba(224," +
+        (224 - redAmount) +
+        "," +
+        (224 - redAmount) +
+        ",0.97)" +
+        ")";
+
+
+    /*
+       Al llegar a la parte inferior,
+       aumenta el efecto rojo.
+    */
+
+    if (progress > 0.65) {
+
+        document.body.style.background =
+            "radial-gradient(circle at center, #210000 0%, #080000 55%, #000 100%)";
+
+    }
+
+
+    if (progress > 0.82) {
+
+        paper.style.boxShadow =
+            "0 0 60px rgba(100,0,0,0.6), inset 0 0 35px rgba(100,0,0,0.3)";
+
+    }
+
+
+    if (progress > 0.94) {
+
+        paper.style.borderColor =
+            "#650000";
+
+    }
+
+});
+
+
+/* =========================
+   LANGUAGE SYSTEM
+========================= */
+
+function setLanguage(language) {
+
+    document.documentElement.lang =
+        language;
+
+    document.querySelectorAll(
+        ".language-box button"
+    ).forEach(button => {
+
+        button.classList.remove("active");
+
+    });
+
+
+    document.getElementById(
+        language + "Btn"
+    ).classList.add("active");
+
+
+    localStorage.setItem(
+        "argLanguage",
+        language
+    );
+
+}
+
+
+/* =========================
+   INITIAL LANGUAGE
+========================= */
+
+const savedLanguage =
+    localStorage.getItem("argLanguage") || "es";
+
+setLanguage(savedLanguage);
+
+</script>
+
+</body>
+</html>
+```
